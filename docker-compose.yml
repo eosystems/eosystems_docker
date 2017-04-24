@@ -26,7 +26,7 @@ services:
     container_name: app-eobackbone
     build: build/eobackbone
     ports:
-      - "13000:3000"
+      - "3000:3000"
     command: /bin/bash
 
   storage-eobackbone:

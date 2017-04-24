@@ -7,6 +7,7 @@ development:
   username: root
   password:
   collation: utf8_bin
+  url: mysql-eobackbone://root:password@mysql-eobackbone:3306
 
 test:
   adapter: mysql2
