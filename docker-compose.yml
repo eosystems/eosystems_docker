@@ -15,7 +15,7 @@ services:
   storage-mysql-eobackbone:
     tty: true
     image: storage-mysql-eobackbone
-    build: build/storage-mysql-eobackbone
+    #build: build/storage-mysql-eobackbone
     container_name: storage-mysql-eobackbone
 
   app-eobackbone:
@@ -32,5 +32,5 @@ services:
   storage-eobackbone:
     tty: true
     image: storage-eobackbone
-    build: build/storage-eobackbone
+    #build: build/storage-eobackbone
     container_name: storage-eobackbone
