@@ -3,7 +3,8 @@ MAINTAINER chato <quick.xp@gmail.com>
 
 RUN mkdir -p /data/eobackbone
 RUN mkdir -p /data/eobackbone/config
-RUN mkdir -p /data/eobackbone/unicorn
+RUN mkdir /data/eobackbone/unicorn
+
 WORKDIR /data/eobackbone
 VOLUME /data/eobackbone
 VOLUME /var/www/eobackbone/current/public
