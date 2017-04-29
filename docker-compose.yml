@@ -26,7 +26,7 @@ services:
     container_name: nginx-eobackbone
     build: build/nginx-eobackbone
     ports:
-      - "10080:80"
+      - "80:80"
     links:
       - eobackbone
 
