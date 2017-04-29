@@ -19,6 +19,7 @@ services:
     container_name: storage-mysql-eobackbone
 
   nginx:
+    tty: true
     image: nginx-eobackbone
     volumes_from:
       - storage-eobackbone
