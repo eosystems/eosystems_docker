@@ -1,10 +1,10 @@
 version: '2'
 services:
-  mysql-eobackbone:
+  mysql:
     tty: true
     image: mysql-eobackbone
     volumes_from:
-      - storage-mysql-eobackbone
+      - storage-mysql
     ports:
       - "13306:3306"
     container_name: mysql-eobackbone
@@ -12,13 +12,24 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
 
-  storage-mysql-eobackbone:
+  storage-mysql:
     tty: true
     image: storage-mysql-eobackbone
     #build: build/storage-mysql-eobackbone
     container_name: storage-mysql-eobackbone
 
-  app-eobackbone:
+  nginx:
+    image: nginx-eobackbone
+    volumes_from:
+      - storage-eobackbone
+    container_name: nginx-eobackbone
+    build: build/nginx-eobackbone
+    ports:
+      - "10080:80"
+    links:
+      - eobackbone
+
+  eobackbone:
     tty: true
     image: eobackbone
     volumes_from:
@@ -26,8 +37,10 @@ services:
     container_name: app-eobackbone
     build: build/eobackbone
     ports:
-      - "3000:3000"
+      - "13000:3000"
     command: /bin/bash
+    links:
+      - mysql
 
   storage-eobackbone:
     tty: true
