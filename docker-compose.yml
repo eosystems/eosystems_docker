@@ -42,6 +42,8 @@ services:
     command: /bin/bash
     links:
       - mysql
+    args:
+      gitbranch: "first-docker"
 
   storage-eobackbone:
     tty: true
