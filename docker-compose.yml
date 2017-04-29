@@ -36,14 +36,15 @@ services:
     volumes_from:
       - storage-eobackbone
     container_name: app-eobackbone
-    build: build/eobackbone
+    build:
+      context: build/eobackbone
+      args:
+        gitbranch: "first-docker"
     ports:
       - "13000:3000"
     command: /bin/bash
     links:
       - mysql
-    args:
-      gitbranch: "first-docker"
 
   storage-eobackbone:
     tty: true
