@@ -31,7 +31,7 @@ services:
       - eobackbone
 
   eobackbone:
-    tty: true
+    #tty: true
     image: eobackbone
     volumes_from:
       - storage-eobackbone
@@ -42,7 +42,6 @@ services:
         gitbranch: "first-docker"
     ports:
       - "13000:3000"
-    command: /bin/bash
     links:
       - mysql
 
