@@ -2,7 +2,7 @@ version: '2'
 services:
   mysql:
     tty: true
-    image: mysql-eobackbone
+    image: eosystems/mysql-eobackbone
     volumes_from:
       - storage-mysql
     ports:
@@ -14,13 +14,13 @@ services:
 
   storage-mysql:
     tty: true
-    image: storage-mysql-eobackbone
+    image: eosystems/storage-mysql-eobackbone
     #build: build/storage-mysql-eobackbone
     container_name: storage-mysql-eobackbone
 
   nginx:
     tty: true
-    image: nginx-eobackbone
+    image: eosystems/nginx-eobackbone
     volumes_from:
       - storage-eobackbone
     container_name: nginx-eobackbone
@@ -32,7 +32,7 @@ services:
 
   eobackbone:
     #tty: true
-    image: eobackbone
+    image: eosystems/eobackbone
     volumes_from:
       - storage-eobackbone
     container_name: app-eobackbone
@@ -47,6 +47,6 @@ services:
 
   storage-eobackbone:
     tty: true
-    image: storage-eobackbone
+    image: eosystems/storage-eobackbone
     #build: build/storage-eobackbone
     container_name: storage-eobackbone
