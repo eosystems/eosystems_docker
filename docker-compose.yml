@@ -39,7 +39,7 @@ services:
     build:
       context: build/eobackbone
       args:
-        gitbranch: "first-docker"
+        gitbranch: "master"
     ports:
       - "13000:3000"
     links:
