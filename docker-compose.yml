@@ -40,6 +40,7 @@ services:
       context: build/eobackbone
       args:
         gitbranch: "master"
+    env_file: .env
     ports:
       - "13000:3000"
     links:
