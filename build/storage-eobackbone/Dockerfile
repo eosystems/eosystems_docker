@@ -7,10 +7,10 @@ RUN mkdir /data/eobackbone/unicorn
 
 WORKDIR /data/eobackbone
 VOLUME /data/eobackbone
-VOLUME /var/www/eobackbone/current/public
-VOLUME /var/www/eobackbone/current/log
+#VOLUME /var/www/eobackbone/current/public
+#VOLUME /var/www/eobackbone/current/log
 
-COPY config/* /data/eobackbone/config/
+#COPY config/* /data/eobackbone/config/
 COPY config/.keep /data/eobackbone/unicorn/
 
 CMD ["/usr/local/bin/bash"]

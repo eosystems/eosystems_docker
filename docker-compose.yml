@@ -48,5 +48,5 @@ services:
   storage-eobackbone:
     tty: true
     image: eosystems/storage-eobackbone
-    #build: build/storage-eobackbone
+    build: build/storage-eobackbone
     container_name: storage-eobackbone
