@@ -1,2 +1,3 @@
 build/eobackbone/
 !build/eobackbone/Dockerfile
+.env
